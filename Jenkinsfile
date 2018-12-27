@@ -13,9 +13,13 @@ pipeline {
            
         }
         stage('Publish Results') {
-            steps {
-               junit '**/target/surefire-reports/*.xml' //junit captures and associates the JUnit XML files matching the inclusion pattern     
+        
+        	post { // changed to post action as we always want to execute this step 
+                always {
+               		junit '**/target/surefire-reports/*.xml' //junit captures and associates the JUnit XML files matching the inclusion pattern     
+                }
             }
+           
            
         }
        
