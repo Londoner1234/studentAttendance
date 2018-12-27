@@ -3,11 +3,11 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-               bat 'mvn clean' //Clean generates the classes again       
+               bat 'mvn clean'       
             }
          stage('Execute Tests') {
             steps {
-               bat 'mvn test' //Clean generates the classes again       
+               bat 'mvn test'       
             }
            
         }
