@@ -15,7 +15,7 @@ public class Student {
         if (attendance < 0 || attendance > 100) throw new IllegalArgumentException();
         if (attendance == 0) return AttendanceGrade.ABSENT; //Added this Line
         if (attendance < 30) return AttendanceGrade.VERY_POOR;
-        //if (attendance < 50) return AttendanceGrade.POOR;  //Removed this line
+          //Removed this line
         if (attendance < 70) return AttendanceGrade.AVERAGE;
         if (attendance < 90) return AttendanceGrade.GOOD; //Change from <= to < 
         return AttendanceGrade.VERY_GOOD;
