@@ -12,15 +12,12 @@ pipeline {
             }
            
         }
-        
-    }
-    post {
-	    always {//Want to always publish the results of a build  
-		    
-		               junit '**/target/surefire-reports/*.xml' //junit captures and associates the JUnit XML files matching the inclusion pattern   
-		            
-		           
-		       
-	    }
+        stage('Publish Results') {
+            steps {
+               junit '**/target/surefire-reports/*.xml' //junit captures and associates the JUnit XML files matching the inclusion pattern     
+            }
+           
+        }
+       
     }
 }
