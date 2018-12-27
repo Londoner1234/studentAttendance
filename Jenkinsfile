@@ -8,7 +8,8 @@ pipeline {
          }
          stage('Execute Tests') {
             steps {
-               bat 'mvn test'       
+               bat 'mvn test' 
+               junit '**/target/*.xml'      
             }
            
         }
