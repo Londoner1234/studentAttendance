@@ -1,6 +1,9 @@
 pipeline {
     agent any
     stages {
+    	stage('Fetching from Git repository'){
+    		git checkout scm
+    	}
         stage('Clean') {
             steps {
                bat 'mvn clean'       
