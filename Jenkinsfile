@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+    
+    	stage('Checkout from Git'){
+    		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Londoner1234/studentAttendance']]])
+    		
+    	}
         stage('Clean') {
             steps {
                bat 'mvn clean'       
